@@ -1,0 +1,62 @@
+[System]
+Name='short'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=2
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Количество_пешеходов'
+Range=[0 50]
+NumMFs=3
+MF1='мало':'trimf',[0 0 15]
+MF2='средне':'trimf',[10 25 40]
+MF3='много':'trimf',[35 50 50]
+
+[Input2]
+Name='Площадь_перекрестка'
+Range=[0 400]
+NumMFs=3
+MF1='Маленькая':'trimf',[0 0 160]
+MF2='Средняя':'trimf',[80 200 320]
+MF3='Большая':'trimf',[240 400 400]
+
+[Input3]
+Name='Скорость'
+Range=[0 150]
+NumMFs=3
+MF1='низкая':'trimf',[0 0 60]
+MF2='средняя':'trimf',[40 75 110]
+MF3='высокая':'trimf',[90 150 150]
+
+[Input4]
+Name='Время_суток'
+Range=[0 24]
+NumMFs=3
+MF1='утреннее':'trimf',[0 0 10]
+MF2='дневное':'trimf',[5 12 20]
+MF3='вечернее':'trimf',[15 24 24]
+
+[Output1]
+Name='Безопасность'
+Range=[0 10]
+NumMFs=3
+MF1='низкая':'trimf',[0 0 4]
+MF2='средняя':'trimf',[2 5 8]
+MF3='высокая':'trimf',[6 10 10]
+
+[Output2]
+Name='Пропускная_способность'
+Range=[0 100]
+NumMFs=3
+MF1='низкая':'trimf',[0 0 40]
+MF2='средняя':'trimf',[20 50 80]
+MF3='высокая':'trimf',[60 100 100]
+
+[Rules]
